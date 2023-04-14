@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Tables</title>
+</head>
+<style>
+table {
+  font-family: verdana, Cursive;
+  border-collapse: collapse; <!--공백 줄이기-->
+  width: 100%;
+}
+
+td, th {
+  border: 3px solid black; /* 칸 나누기 */
+  text-align: center; /* 글씨위치 */
+  padding: 10px 20px; /* 칸 간격 */
+  /* padding-top,bottom,right,left */
+}
+
+tr:nth-child(even) {
+  background-color: powderblue;
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: none;
+}
+</style>
+<body>
+	<h1>주소록</h1> <!-- 3행 4열 -->
+	<table >
+		<tr> 
+           <!--  <th>번호</th>	 -->	
+            <th colspan=2>번호/성명</th>		
+            <th>연락처</th>		
+            <th>주소</th>		
+		</tr>
+		<tr> 
+            <th rowspan=2>1</th>		
+            <th><a href="https://namu.wiki/w/%ED%99%8D%EA%B8%B8%EB%8F%99" target="_blank"> 홍길동</a></th>
+            <th>010-1111-2222</th>		
+            <th>서울시 강남구</th>		
+		</tr>
+		<tr> 
+            <!-- <th>2</th>	 -->	
+            <th><a href="https://namu.wiki/w/%EC%A0%84%EC%9A%B0%EC%B9%98" target="_blank"> 전우치</a></th>		
+            <th>010-2222-3333</th>		
+            <th>서울시 영등포구</th>		
+		</tr>
+		<tr> 
+            <th>3</th>		
+            <th><a href="https://namu.wiki/w/%EC%86%90%ED%9D%A5%EB%AF%BC" target="_blank"> 손흥민</a></th>	
+            <th>010-3333-4444</th>		
+            <th>서울시 마포구</th>		
+		</tr>
+		<tr> 
+            <th>4</th>
+            <th><a href="https://namu.wiki/w/%EC%9D%B4%EA%B0%95%EC%9D%B8" target="_blank"> 이강인</a></th>		
+            <th>010-4444-5555</th>		
+            <th>서울시 강서구</th>		
+		</tr>
+	</table>
+</body>
+</html>
