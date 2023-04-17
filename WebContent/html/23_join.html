@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 폼</title>
+	<style>
+		.btn_style{
+			background:black;
+			color:white;
+			width:70px;
+			height:35px;
+			border:1px solid lightgray;		
+		}
+	
+	</style>
+</head>
+<body>
+	<h1>회원가입</h1>
+	<form action="#" method="get">
+		<ul>
+			<li>
+				<label>아이디</label>
+				<input type="text" name="id" placeholder="*8자 이상 영문으로 입력해주세요">	
+				<button type="button" class="btn_style">중복확인</button>
+				
+			</li>
+			<li>
+				<label>비밀번호</label>
+				<input type="text" name="pass">
+			</li>
+			<li>
+				<label>비밀번호 확인</label>
+				<input type="password" name="cpass">
+			</li>
+			<li>
+				<label>성명</label>
+				<input type="text" name="name">
+			</li>
+			<li>
+				<label>성별</label>
+				<input type="radio" name="gender" value="male" >남자
+				<input type="radio" name="gender" value="female">여자
+			</li>
+			<li>
+				<label>이메일</label>
+				<input type="text" name="email1"> @ <input list="browsers">
+				<datalist id="browsers">
+					<option value="naver.com">
+					<option value="gmail.com">
+					<option value="daum.com">
+					<option value="hanmail.com">
+					<option value="korea.com">
+				</datalist>
+			</li>
+			<li>
+				<label>주소</label>
+				<input type="text" name="addr">	<button type="button" class="btn_style">주소찾기</button>
+				
+			</li>
+			<li>
+				<label>상세주소</label>
+					<input type="text" name="addr2">
+			</li>		
+			<li>
+				<label>휴대폰</label>
+					<input type="radio" name="phone" value="skt" >SKT
+					<input type="radio" name="phone" value="lhu+">LGU+
+					<input type="radio" name="phone" value="kt">KT
+				<select name="tel">
+					<option value="default">선택</option>
+					<option value="010">010</option>
+					<option value="011">011</option>
+					<option value="012">012</option>
+				</select>
+					-<input type="text" name="phone1">
+					-<input type="text" name="phone2">
+			</li>
+			<li>
+				<label>취미</label>
+					<input type="checkbox" name="hobby" value="영화">영화보기
+					<input type="checkbox" name="hobby" value="등산">등산하기
+					<input type="checkbox" name="hobby" value="게임">게임하기
+					<input type="checkbox" name="hobby" value="잠자기">잠자기
+			</li>
+				<li>
+					<label>자기소개</label>
+					<textarea rows="5" cols="50" name="content"  placeholder="200자 이내로 작성"></textarea>
+				</li>			
+				<li>
+				<button type="button" class="btn_style">가입하기</button>
+				<button type="reset" class="btn_style">다시입력</button>
+			</li>
+		</ul>
+		
+	</form>
+</body>
+</html>
