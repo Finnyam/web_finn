@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Horizontal</title>
+	<style>
+		ul {
+			border:1px solid red;
+			list-style-type:none;
+			margin:0px;
+			padding:0px;
+			width:700px;
+			background:navy;
+			color:white;
+			/* height:50px; */
+			overflow:hidden;
+		}
+		li {
+			border:1px solid green;
+			/* display: inline-block; */
+			/* width:80px;
+			height:20px; */
+			float:left;
+		}
+		ul li a{
+			display:block;
+			text-decoration:none;
+			color:white;
+			padding:8px 15px;
+			/* float:left;*/
+			/* width:80px;
+			height:20px; */
+		}
+		ul li:last-child {
+			/* border:2px solid yellow; */
+			float:right;
+		}
+		ul li:first-child a{
+			background:lightgray;
+		}
+		ul li a:hover:not(.active) {
+			background:tomato;
+		}
+</style>
+</head>
+<body>
+	<h1>Horizontal</h1>
+	<ul>
+		<li><a href="#" class="active">Home</a></li>
+		<li><a href="#">News</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
+</body>
+</html>

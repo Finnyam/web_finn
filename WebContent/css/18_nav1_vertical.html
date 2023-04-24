@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Vertical</title>
+	<style>
+		ul{
+			background:lightgray;
+			width:200px;
+			cursor:pointer;
+			margin:0px;
+			padding:0px;
+			list-style-type:none;
+			height:400px;
+			float:left;
+		}
+		ul li a{
+			display:block;
+			padding:8px 15px;
+			font-size:12px;
+		}
+		ul li:hover{
+			background:gray;
+			color:white;
+		}
+		ul li:first-child{
+			background:mediumseagreen;
+			color:white;
+		}
+		/* ul > li > a:hover:not(.active){
+		
+		} */
+		div.content{
+			background:tomato;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Vertical</h1>
+	<ul>	<!-- left menu -->
+		 <li><a href="#" class="active"></a>Home</li>
+		 <li><a href="#"></a>News</li>
+		 <li><a href="#"></a>Contact</li>
+		 <li><a href="#"></a>About</li>
+	</ul>
+	<div class="content"> <!-- content -->
+		<p>Vertical menu - Home</p>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
