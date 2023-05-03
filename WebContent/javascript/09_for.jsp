@@ -38,6 +38,7 @@
 	for(subject of subList){
 		document.write('subList = '+ subject + '<br>');
 	}
+	
 	//4.forEach ==> arrow 
 	document.write('<h3>4. forEach </h3>');
 	subList.forEach((value, index, array) => {
