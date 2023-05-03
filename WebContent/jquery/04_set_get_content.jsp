@@ -56,7 +56,6 @@
 	 네이버 주소 가져오기(href 속성만) : <span id="s1"></span><br>
 	 이미지 주소 가져오기(src 속성만) : <span id="s2"></span><br>
 	 <button type="button" id="get_data">데이터 가져오기</button>
-	 
 </body>
 </html>
 
