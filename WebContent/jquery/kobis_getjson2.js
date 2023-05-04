@@ -14,19 +14,20 @@ $(document).ready(function(){
 			let kdate = $("input[type='text']").val();
 			let ktype = $("#s1").val();
 			let url = "";
-			if(ktype == "day"){
+			if(ktype == "Daily"){
 				//일별 박스오피스 url 생성
-				url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+ kdate;
+				url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/search"+ktype+"BoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+ kdate;
 			
 			}else{
-				url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+kdate;
+				url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/search"+ktype+"BoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+kdate;
 			}			
 			$.getJSON(url, function(kobis){
 				//2. output code 생성
 				let boxOffice = kobis.boxOfficeResult;
-				let code = "<h1> 박스오피스 : "+boxOffice.boxofficeType+"</h1>";
+				let code = "<div id='d2'>"; 
+				code += "<h1> 박스오피스 : "+boxOffice.boxofficeType+"</h1>";
 				code += "<h3> 조회일자 : "+boxOffice.showRange+"</h3>";
-				code += "<table>";
+				code += "<table border=1>";
 				code += "<tr>";
 				code += "<th>순위</th>";	
 				code += "<th>영화제목</th>";	
@@ -34,7 +35,14 @@ $(document).ready(function(){
 				code += "<th>누적관객수</th>";	
 				code += "<th>상영횟수</th>";
 				code += "</tr>";
-				for(data of boxOffice.dailyBoxOfficeList){
+				
+				let listName = null;
+				if(ktype == "Daily"){
+					listName = boxOffice.dailyBoxOfficeList;
+				}else{
+					listName = boxOffice.weeklyBoxOfficeList;
+				}
+				for(data of listName){
 					code += "<tr>";
 					code += "<td>"+ data.rank +"</td>";
 					code += "<td>"+ data.movieNm +"</td>";
@@ -44,9 +52,14 @@ $(document).ready(function(){
 					code += "</tr>";
 					}
 					code += "</table>";
+					code += "</div>";
 					//이전 출력화면 삭제!
+					$("div#d2").remove();
 					
-					$("body").append(code);
+					//$("body").append(code);
+					//$().before();
+					$("#p1").css("background","tomato");
+					$("#d1").after(code);
 			});
 		}
 	});	
