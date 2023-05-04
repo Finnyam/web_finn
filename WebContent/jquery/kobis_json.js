@@ -13,20 +13,24 @@ $(document).ready(function(){
 						{"rnum":"9","rank":"9","rankInten":"-1","rankOldAndNew":"OLD","movieCd":"20200154","movieNm":"킬링 로맨스","openDt":"2023-04-14","salesAmt":"16140706","salesShare":"1.3","salesInten":"-31919768","salesChange":"-66.4","salesAcc":"1702863922","audiCnt":"1778","audiInten":"-3225","audiChange":"-64.5","audiAcc":"177902","scrnCnt":"139","showCnt":"180"},
 						{"rnum":"10","rank":"10","rankInten":"-1","rankOldAndNew":"OLD","movieCd":"20231164","movieNm":"무명","openDt":"2023-04-26","salesAmt":"11138275","salesShare":"0.9","salesInten":"-1264480","salesChange":"-10.2","salesAcc":"166066039","audiCnt":"1392","audiInten":"93","audiChange":"7.2","audiAcc":"18667","scrnCnt":"161","showCnt":"207"}]}}
 	
-	
-	let code = "<h1> 박스오피스 : "+kobis.boxOfficeResult.boxofficeType+"</h1>";
-	code += "<h3> 조회일자 : "+kobis.boxOfficeResult.showRange+"</h3>";
+	let boxOffice = kobis.boxOfficeResult;
+	let code = "<h1> 박스오피스 : "+boxOffice.boxofficeType+"</h1>";
+	code += "<h3> 조회일자 : "+boxOffice.showRange+"</h3>";
 	code += "<table>";
-	code += "<tr><th>번호/th><th>순위</th><th>순위 증감</th><th>신규진입여부</th><th>영화대표코드</th><th>영화명</th><th>영화개봉일</th><th>영화매출액</th><th>매출비율</th><th>매출액 증감</th><th>매출액 증감 비율</th><th>누적매출액</th><th>해당일 관객수</th><th>관객수 증감</th><th>관객수 증감 비율/th><th>누적 관객수/th><th>상영한 스크린수/th><th>상영된 횟수/th></tr>";
-	for(data in kobis.boxOfficeResult.dailyBoxOfficeList){
-		
+	code += "<tr>";
+	code += "<th>순위</th>";	
+	code += "<th>영화제목</th>";	
+	code += "<th>개봉일</th>";	
+	code += "<th>누적관객수</th>";	
+	code += "<th>상영횟수</th>";
+	code += "</tr>";
+	for(data of boxOffice.dailyBoxOfficeList){
 		code += "<tr>";
-		code += "<td>"+ kobis.list[index].rnum +"</td>";
-		code += "<td>"+ kobis.list[index].rank +"</td>";
-		code += "<td>"+ kobis.list[index].rankInten +"</td>";
-		code += "<td>"+ score.math +"</td>";
-		code += "<td>"+ tot +"</td>";
-		code += "<td>"+ avg +"</td>";
+		code += "<td>"+ data.rank +"</td>";
+		code += "<td>"+ data.movieNm +"</td>";
+		code += "<td>"+ data.openDt +"</td>";
+		code += "<td>"+ data.audiAcc +"</td>";
+		code += "<td>"+ data.showCnt +"</td>";
 		code += "</tr>";
 		}
 		code += "</table>";					
