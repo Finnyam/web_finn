@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.beans.web_project_finn.JoinVo" %>    
-<%
+<%@ page import="com.beans.web_project_finn.JoinVo" %>  
+  
+<jsp:useBean id="joinVo" class="com.beans.web_project_finn.JoinVo" />  
+<jsp:setProperty name="joinVo" property="*" />  
+<%--
 	JoinVo joinVo  = new JoinVo();
 	//request.setCharacterEncoding("utf-8");
 
@@ -21,8 +24,7 @@
 	joinVo.setHobby(request.getParameterValues("hobby"));
 	joinVo.setIntro(request.getParameter("intro"));
 	
-	
-%>
+--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,11 +32,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원가입 정보</h1>
+	<h1>회원가입 정보 - JavaBean 연동</h1>
 	<ul>
 		<li>
 			<label>아이디 : </label>
-			<span><%= joinVo.getId() %></span>	
+			<span><jsp:getProperty name="joinVo" property="id"/></span>	
 		</li>
 		<li>
 			<label>패스워드 : </label>
