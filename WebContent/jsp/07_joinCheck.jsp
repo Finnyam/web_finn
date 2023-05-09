@@ -1,28 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.beans.web_project_finn.JoinVo" %>    
 <%
+	JoinVo joinVo  = new JoinVo();
 	//request.setCharacterEncoding("utf-8");
 
 	//회원가입폼에서 넘어오는 데이터를 변수에 저장
-	String id =  request.getParameter("id");
-	String pass =  request.getParameter("pass");
-	String name =  request.getParameter("name");
-	String gender =  request.getParameter("gender");
-	String email1 =  request.getParameter("email1");
-	String email2 =  request.getParameter("email2");
-	String addr1 =  request.getParameter("addr1");
-	String addr2 =  request.getParameter("addr2");
-	String phone =  request.getParameter("phone");
-	String tel =  request.getParameter("tel");
-	String phone1 =  request.getParameter("phone1");
-	String phone2 =  request.getParameter("phone2");
-	String[] hobby =  request.getParameterValues("hobby");
-	String intro =  request.getParameter("intro");
+	joinVo.setId(request.getParameter("id"));
+	joinVo.setPass(request.getParameter("pass"));
+	joinVo.setName(request.getParameter("name"));
+	joinVo.setGender(request.getParameter("gender"));
+	joinVo.setEmail1(request.getParameter("email1"));
+	joinVo.setEmail2(request.getParameter("email2"));
+	joinVo.setAddr1(request.getParameter("addr1"));
+	joinVo.setAddr2(request.getParameter("addr2"));
+	joinVo.setPhone(request.getParameter("phone"));
+	joinVo.setTel(request.getParameter("tel"));
+	joinVo.setPhone1(request.getParameter("phone1"));
+	joinVo.setPhone2(request.getParameter("phone2"));
+	joinVo.setHobby(request.getParameterValues("hobby"));
+	joinVo.setIntro(request.getParameter("intro"));
 	
-	String hobbyList = String.join(",",hobby);
-	String email = email1+"@"+email2;
-	String address = addr1 + addr2;
-	String phoneNumber = tel+"-"+phone1+"-"+phone2;
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -35,43 +34,43 @@
 	<ul>
 		<li>
 			<label>아이디 : </label>
-			<span><%= id %></span>	
+			<span><%= joinVo.getId() %></span>	
 		</li>
 		<li>
 			<label>패스워드 : </label>
-			<span><%= pass %></span>	
+			<span><%= joinVo.getPass() %></span>	
 		</li>
 		<li>
 			<label>성명 : </label>
-			<span><%= name %></span>	
+			<span><%= joinVo.getName() %></span>	
 		</li>
 		<li>
 			<label>성별 : </label>
-			<span><%= gender %></span>	
+			<span><%= joinVo.getGender() %></span>	
 		</li>
 		<li>
 			<label>이메일 : </label>
-			<span><%= email %></span>	
+			<span><%= joinVo.getEmail() %></span>	
 		</li>
 		<li>
 			<label>주소 : </label>
-			<span><%= address%></span>	
+			<span><%= joinVo.getAddress() %></span>	
 		</li>
 		<li>
 			<label>통신사 : </label>
-			<span><%= phone %></span>	
+			<span><%= joinVo.getPhone() %></span>	
 		</li>
 		<li>
 			<label>핸드폰 번호 : </label>
-			<span><%= phoneNumber%></span>	
+			<span><%= joinVo.getPhoneNumber() %></span>	
 		</li>
 		<li>
 			<label>취미 : </label>
-			<span><%= hobbyList %></span>	
+			<span><%= joinVo.getHobbyList() %></span>	
 		</li>
 		<li>
 			<label>자기소개 : </label>
-			<span><%= intro %></span>	
+			<span><%= joinVo.getIntro() %></span>	
 		</li>
 	</ul>
 </body>
